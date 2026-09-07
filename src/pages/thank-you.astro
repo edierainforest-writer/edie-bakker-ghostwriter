@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Thank You">
+	<Header />
+	<main id="main">
+		<section class="mx-auto max-w-2xl px-6 pt-20 pb-24 text-center">
+			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">Thank you</p>
+			<h1 class="font-serif text-4xl sm:text-5xl leading-tight text-ink mb-6">
+				Message sent
+			</h1>
+			<p class="text-lg text-ink/70 leading-relaxed mb-10">
+				Thanks for reaching out — I'll get back to you soon. In the meantime, feel free to
+				browse my <a href="/portfolio" class="text-clay hover:text-clay-dark font-medium">portfolio</a>
+				or read more <a href="/about" class="text-clay hover:text-clay-dark font-medium">about me</a>.
+			</p>
+			<a
+				href="/"
+				class="inline-flex items-center rounded-md border border-ink/20 px-6 py-3 text-sm font-semibold text-ink hover:border-clay hover:text-clay transition-colors"
+			>
+				Back to home
+			</a>
+		</section>
+	</main>
+	<Footer />
+</Layout>
