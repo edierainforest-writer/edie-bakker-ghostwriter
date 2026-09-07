@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/edie-headshot.jpg';
+
+const credentials = [
+	'B.A. in Anthropology',
+	'MFA-equivalent in Writing',
+	'Contributor, National Geographic Magazine (Feb. 1994)',
+	'Author, Rendezvous with a Rainforest',
+	'"Artist of the Year," Art Spark Texas',
+	'Leader, Costa Rica Writers Group',
+	'Freelance editor',
+];
+---
+
+<Layout title="About">
+	<Header />
+	<main id="main">
+		<section class="mx-auto max-w-3xl px-6 pt-20 pb-16">
+			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">About</p>
+			<div class="flex flex-col-reverse sm:flex-row sm:items-start gap-10 mb-8">
+				<h1 class="font-serif text-4xl sm:text-5xl leading-tight text-ink flex-1">
+					"Always go after the truth."
+				</h1>
+				<Image
+					src={headshot}
+					alt="Edie Bakker"
+					width={220}
+					height={220}
+					class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-stone shrink-0"
+				/>
+			</div>
+			<div class="space-y-6 text-lg text-ink/75 leading-relaxed">
+				<p>
+					That was my father's advice, and it's shaped everything I've written since. I grew up
+					in Papua New Guinea as the daughter of missionaries, which meant an early, close-up
+					education in what it costs to tell a true story instead of a comfortable one.
+				</p>
+				<p>
+					That instinct took me back to Papua New Guinea as an adult, leading two expeditions
+					into the Hunstein Rainforest to document a forest under threat from logging — an
+					experience that became an article for <em>National Geographic Magazine</em> in
+					February 1994, and later my memoir, <em>Rendezvous with a Rainforest</em>.
+				</p>
+				<p>
+					I hold a degree in anthropology and an MFA-equivalent qualification in writing —
+					training that shows up in my work as a persistent curiosity about people and a
+					refusal to flatten them into a tidy narrative. I write and edit across genres —
+					memoir, fiction, cross-cultural nonfiction, faith-based writing — because the thing
+					that unites them isn't genre, it's honesty on the page.
+				</p>
+				<p>
+					I was named "Artist of the Year" by Art Spark Texas, I lead the Costa Rica Writers
+					Group, and I work as a freelance editor alongside my own writing — so when I ghostwrite
+					for someone else, I bring an editor's eye to it, not just a writer's.
+				</p>
+				<p>
+					Ghostwriting, to me, is an extension of the same discipline: getting out of the way of
+					someone else's truth so it can reach the page intact, in a voice that still sounds
+					like them.
+				</p>
+			</div>
+		</section>
+
+		<section class="border-t border-stone-dark/50 bg-stone/40">
+			<div class="mx-auto max-w-3xl px-6 py-16">
+				<h2 class="font-serif text-2xl text-ink mb-6">Credentials</h2>
+				<ul class="grid gap-3 sm:grid-cols-2">
+					{
+						credentials.map((c) => (
+							<li class="flex items-start gap-2 text-sm text-ink/75">
+								<span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-clay shrink-0" />
+								{c}
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

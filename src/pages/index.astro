@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Placeholder from '../components/Placeholder.astro';
+
+const highlights = [
+	{
+		title: 'Published, not just credentialed',
+		body: "Author of Rendezvous with a Rainforest and contributor to National Geographic Magazine — I've done the work I offer to do for you.",
+	},
+	{
+		title: 'Trained in both craft and truth',
+		body: 'A background in anthropology and an MFA-equivalent in writing means your story gets shaped with both narrative skill and rigor.',
+	},
+	{
+		title: 'Editor as well as writer',
+		body: 'Years as a freelance editor and leader of the Costa Rica Writers Group means every draft is held to a publishable standard.',
+	},
+];
+
+const services = [
+	{ name: 'Memoir & Life Story', desc: 'Turning a lived life into a book readers can’t put down.' },
+	{ name: 'Faith-Based & Christian Nonfiction', desc: 'Writing that carries conviction without losing craft.' },
+	{ name: 'Cross-Cultural & Travel Narrative', desc: 'Stories shaped by place, displacement, and belonging.' },
+	{ name: 'General Nonfiction & Business Books', desc: 'Expertise translated into a book that builds authority.' },
+];
+---
+
+<Layout title="Ghostwriter & Editor">
+	<Header />
+	<main id="main">
+		<section class="mx-auto max-w-5xl px-6 pt-20 pb-16">
+			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">
+				Ghostwriter &amp; Editor
+			</p>
+			<h1 class="font-serif text-5xl sm:text-6xl leading-[1.05] text-ink max-w-3xl">
+				Your story, your voice — written to be finished.
+			</h1>
+			<p class="mt-6 text-lg text-ink/70 max-w-2xl leading-relaxed">
+				I'm Edie Bakker, a ghostwriter and editor who helps authors, founders, and
+				storytellers turn a lifetime of experience into a book that actually gets written —
+				and reads like it was written by them.
+			</p>
+			<div class="mt-9 flex flex-wrap gap-4">
+				<a
+					href="/contact"
+					class="inline-flex items-center rounded-md bg-clay px-6 py-3 text-sm font-semibold text-ivory hover:bg-clay-dark transition-colors"
+				>
+					Start a conversation
+				</a>
+				<a
+					href="/portfolio"
+					class="inline-flex items-center rounded-md border border-ink/20 px-6 py-3 text-sm font-semibold text-ink hover:border-clay hover:text-clay transition-colors"
+				>
+					See published work
+				</a>
+			</div>
+		</section>
+
+		<section class="border-t border-stone-dark/50 bg-stone/40">
+			<div class="mx-auto max-w-5xl px-6 py-16 grid gap-10 sm:grid-cols-3">
+				{
+					highlights.map((h) => (
+						<div>
+							<h2 class="font-serif text-xl text-ink mb-2">{h.title}</h2>
+							<p class="text-sm text-ink/70 leading-relaxed">{h.body}</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="mx-auto max-w-5xl px-6 py-20">
+			<h2 class="font-serif text-3xl text-ink mb-2">What I write</h2>
+			<p class="text-ink/60 mb-10 max-w-xl">
+				A generalist practice grounded in a few things I know deeply.
+			</p>
+			<div class="grid gap-6 sm:grid-cols-2">
+				{
+					services.map((s) => (
+						<div class="rounded-lg border border-stone-dark/60 p-6 hover:border-clay/60 transition-colors">
+							<h3 class="font-serif text-lg text-ink mb-1.5">{s.name}</h3>
+							<p class="text-sm text-ink/65 leading-relaxed">{s.desc}</p>
+						</div>
+					))
+				}
+			</div>
+			<a href="/services" class="inline-block mt-8 text-sm font-semibold text-clay hover:text-clay-dark">
+				View services &amp; process &rarr;
+			</a>
+		</section>
+
+		<section class="border-t border-stone-dark/50 bg-stone/40">
+			<div class="mx-auto max-w-5xl px-6 py-20">
+				<h2 class="font-serif text-3xl text-ink mb-8">What clients say</h2>
+				<Placeholder label="Send me 2–4 client testimonials (quote + name/role, or initials if they prefer anonymity) and I'll replace this with a real testimonial grid." />
+			</div>
+		</section>
+
+		<section class="mx-auto max-w-5xl px-6 py-20 text-center">
+			<h2 class="font-serif text-3xl text-ink mb-4">Have a story worth telling?</h2>
+			<p class="text-ink/70 max-w-lg mx-auto mb-8">
+				Let's talk about what you're trying to write, and whether I'm the right person to help
+				you write it.
+			</p>
+			<a
+				href="/contact"
+				class="inline-flex items-center rounded-md bg-clay px-6 py-3 text-sm font-semibold text-ivory hover:bg-clay-dark transition-colors"
+			>
+				Get in touch
+			</a>
+		</section>
+	</main>
+	<Footer />
+</Layout>

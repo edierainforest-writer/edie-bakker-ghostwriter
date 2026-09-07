@@ -1,0 +1,44 @@
+---
+const navItems = [
+	{ href: '/', label: 'Home' },
+	{ href: '/about', label: 'About' },
+	{ href: '/services', label: 'Services' },
+	{ href: '/portfolio', label: 'Portfolio' },
+	{ href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-stone-dark/50">
+	<div class="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
+		<a href="/" class="font-serif text-xl tracking-tight text-ink">
+			Edie Bakker
+			<span class="block text-xs font-sans tracking-[0.2em] uppercase text-clay mt-0.5">
+				Ghostwriter &amp; Editor
+			</span>
+		</a>
+
+		<nav aria-label="Main navigation">
+			<ul class="flex items-center gap-6 text-sm font-medium">
+				{
+					navItems.map((item) => {
+						const isActive =
+							item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
+						return (
+							<li>
+								<a
+									href={item.href}
+									aria-current={isActive ? 'page' : undefined}
+									class={`transition-colors hover:text-clay ${isActive ? 'text-clay' : 'text-ink/80'}`}
+								>
+									{item.label}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</nav>
+	</div>
+</header>

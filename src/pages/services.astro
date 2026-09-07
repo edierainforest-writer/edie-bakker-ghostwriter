@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const offerings = [
+	{
+		name: 'Editing',
+		desc: 'Developmental and line editing for a manuscript that already exists but isn’t working yet — structure, pacing, clarity, voice.',
+	},
+	{
+		name: 'Rewriting',
+		desc: 'Reworking existing material — a rough draft, an old manuscript, scattered writing — into something publishable.',
+	},
+	{
+		name: 'Composition from Outline (Oral Input)',
+		desc: 'The closest thing to classic ghostwriting: you bring an outline and talk through the material — interviews, voice memos, conversation — and I compose the manuscript from that.',
+	},
+	{
+		name: 'Design',
+		desc: 'Bringing a finished manuscript to a polished, publication-ready form.',
+	},
+];
+
+const process = [
+	{
+		step: '1. Discovery call',
+		desc: 'A free conversation about your story, your goals for the book, and whether we’re a fit — no pressure, no pitch.',
+	},
+	{
+		step: '2. Scope & agreement',
+		desc: 'We agree on scope, timeline, and fee in writing before anything starts, including confidentiality and IP terms.',
+	},
+	{
+		step: '3. Interviews & research',
+		desc: 'Structured interviews (recorded, transcribed) plus review of any existing material — notes, drafts, source documents.',
+	},
+	{
+		step: '4. Drafting',
+		desc: 'Chapters delivered in batches so you can react early, not just at the end.',
+	},
+	{
+		step: '5. Revision',
+		desc: 'Structured rounds of revision until the manuscript sounds like you and says what you meant.',
+	},
+	{
+		step: '6. Delivery',
+		desc: 'A finished manuscript, formatted and ready for submission, self-publishing, or your next step.',
+	},
+];
+---
+
+<Layout title="Services">
+	<Header />
+	<main id="main">
+		<section class="mx-auto max-w-3xl px-6 pt-20 pb-14">
+			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">Services</p>
+			<h1 class="font-serif text-4xl sm:text-5xl leading-tight text-ink mb-6">
+				Ways we can work together
+			</h1>
+			<p class="text-lg text-ink/70 leading-relaxed">
+				Every project starts as a conversation, not a package. Here's the general shape of the
+				work I take on.
+			</p>
+		</section>
+
+		<section class="mx-auto max-w-3xl px-6 pb-16">
+			<div class="grid gap-6">
+				{
+					offerings.map((o) => (
+						<div class="rounded-lg border border-stone-dark/60 p-6">
+							<h2 class="font-serif text-xl text-ink mb-2">{o.name}</h2>
+							<p class="text-sm text-ink/70 leading-relaxed">{o.desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="border-t border-stone-dark/50 bg-stone/40">
+			<div class="mx-auto max-w-3xl px-6 py-16">
+				<h2 class="font-serif text-2xl text-ink mb-8">How a project runs</h2>
+				<ol class="space-y-6">
+					{
+						process.map((p) => (
+							<li>
+								<h3 class="font-serif text-lg text-ink">{p.step}</h3>
+								<p class="text-sm text-ink/70 leading-relaxed mt-1">{p.desc}</p>
+							</li>
+						))
+					}
+				</ol>
+			</div>
+		</section>
+
+		<section class="mx-auto max-w-3xl px-6 py-16">
+			<h2 class="font-serif text-2xl text-ink mb-6">Pricing</h2>
+			<div class="rounded-lg border border-stone-dark/60 p-6 flex items-baseline gap-3">
+				<span class="font-serif text-3xl text-ink">$75</span>
+				<span class="text-sm text-ink/60">per hour, across editing, rewriting, composition, and design</span>
+			</div>
+			<p class="text-sm text-ink/60 mt-4">
+				Larger projects can be scoped with an estimated total hours and a written agreement
+				before work begins, so there are no surprises.
+			</p>
+		</section>
+	</main>
+	<Footer />
+</Layout>

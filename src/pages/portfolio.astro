@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Placeholder from '../components/Placeholder.astro';
+---
+
+<Layout title="Portfolio">
+	<Header />
+	<main id="main">
+		<section class="mx-auto max-w-3xl px-6 pt-20 pb-14">
+			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">Portfolio</p>
+			<h1 class="font-serif text-4xl sm:text-5xl leading-tight text-ink mb-6">
+				Proof of craft
+			</h1>
+			<p class="text-lg text-ink/70 leading-relaxed">
+				Ghostwriting is, by design, invisible — most of what I write appears under someone
+				else's name. What follows is my own published work, plus what I can show from
+				collaborations.
+			</p>
+		</section>
+
+		<section class="mx-auto max-w-3xl px-6 pb-16">
+			<h2 class="font-serif text-2xl text-ink mb-6">Published under my own name</h2>
+
+			<div class="rounded-lg border border-stone-dark/60 p-6 mb-6">
+				<h3 class="font-serif text-xl text-ink mb-1">Rendezvous with a Rainforest</h3>
+				<p class="text-xs uppercase tracking-wide text-clay mb-3">Memoir &middot; 272 pages</p>
+				<p class="text-sm text-ink/70 leading-relaxed">
+					An account of two expeditions into Papua New Guinea's Hunstein Rainforest to document
+					and help preserve a forest slated for logging — food shortages, leeches, giant
+					cassowaries, and the reporting that became a
+					<em>National Geographic Magazine</em> feature ("Return to Hunstein Forest," Feb. 1994).
+				</p>
+			</div>
+
+			<div class="rounded-lg border border-stone-dark/60 p-6">
+				<h3 class="font-serif text-lg text-ink mb-2">More titles</h3>
+				<p class="text-sm text-ink/70 leading-relaxed mb-3">
+					Additional books across Christian fiction, general fiction, Costa Rica &amp;
+					cross-cultural living, and Bible study are listed on my author site.
+				</p>
+				<a
+					href="https://edie-bakker-books.netlify.app"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-sm font-semibold text-clay hover:text-clay-dark"
+				>
+					View full author catalog &rarr;
+				</a>
+			</div>
+		</section>
+
+		<section class="border-t border-stone-dark/50 bg-stone/40">
+			<div class="mx-auto max-w-3xl px-6 py-16">
+				<h2 class="font-serif text-2xl text-ink mb-6">Ghostwritten &amp; collaborative work</h2>
+				<Placeholder label="Tell me which past ghostwriting/editing projects you're able to name or describe (even anonymized — e.g. 'memoir for a Costa Rica-based entrepreneur, 2023') and I'll build real project cards here." />
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
