@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Placeholder from '../components/Placeholder.astro';
 ---
 
 <Layout title="Portfolio">
@@ -53,8 +52,17 @@ import Placeholder from '../components/Placeholder.astro';
 
 		<section class="border-t border-stone-dark/50 bg-stone/40">
 			<div class="mx-auto max-w-3xl px-6 py-16">
-				<h2 class="font-serif text-2xl text-ink mb-6">Ghostwritten &amp; collaborative work</h2>
-				<Placeholder label="Tell me which past ghostwriting/editing projects you're able to name or describe (even anonymized — e.g. 'memoir for a Costa Rica-based entrepreneur, 2023') and I'll build real project cards here." />
+				<h2 class="font-serif text-2xl text-ink mb-6">Editorial &amp; mentoring experience</h2>
+				<div class="rounded-lg border border-stone-dark/60 p-6">
+					<h3 class="font-serif text-lg text-ink mb-2">Costa Rica Writers Group</h3>
+					<p class="text-xs uppercase tracking-wide text-clay mb-3">Moderator &middot; 5+ years</p>
+					<p class="text-sm text-ink/70 leading-relaxed">
+						Edie has been the moderator for the Costa Rica Writers Group — 75 writers from
+						all over the world — for over five years. In that role, she mentors writers and
+						manages the analysis of stories and articles by dozens of authors, giving her deep,
+						ongoing experience working inside other people's manuscripts.
+					</p>
+				</div>
 			</div>
 		</section>
 	</main>

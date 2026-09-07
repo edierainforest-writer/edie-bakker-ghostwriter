@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Placeholder from '../components/Placeholder.astro';
+import { Image } from 'astro:assets';
+import flowers from '../assets/flowers-on-table.jpg';
 
 const highlights = [
 	{
 		title: 'Published, not just credentialed',
-		body: "Author of Rendezvous with a Rainforest and contributor to National Geographic Magazine — I've done the work I offer to do for you.",
+		body: 'Edie has authored and published 14 books ranging from true-to-life fiction to personal memoirs and self-help books, and has written for National Geographic Magazine.',
 	},
 	{
 		title: 'Trained in both craft and truth',
@@ -16,6 +17,19 @@ const highlights = [
 	{
 		title: 'Editor as well as writer',
 		body: 'Years as a freelance editor and leader of the Costa Rica Writers Group means every draft is held to a publishable standard.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: "I am very enthusiastic and happy with Edie's work. I feel that she has made the writing of my story into one of the best experiences in my life. My dream has become a reality.",
+		name: 'Edgar Madrigal',
+		project: '"Finding Pura Vida"',
+	},
+	{
+		quote: 'Edie made the story of my life come alive and gave it a deeply meaningful perspective.',
+		name: 'Jasmine Kent',
+		project: '"Loving God: Loving Joe"',
 	},
 ];
 
@@ -30,31 +44,42 @@ const services = [
 <Layout title="Ghostwriter & Editor">
 	<Header />
 	<main id="main">
-		<section class="mx-auto max-w-5xl px-6 pt-20 pb-16">
-			<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">
-				Ghostwriter &amp; Editor
-			</p>
-			<h1 class="font-serif text-5xl sm:text-6xl leading-[1.05] text-ink max-w-3xl">
-				Your story, your voice — written to be finished.
-			</h1>
-			<p class="mt-6 text-lg text-ink/70 max-w-2xl leading-relaxed">
-				I'm Edie Bakker, a ghostwriter and editor who helps authors, founders, and
-				storytellers turn a lifetime of experience into a book that actually gets written —
-				and reads like it was written by them.
-			</p>
-			<div class="mt-9 flex flex-wrap gap-4">
-				<a
-					href="/contact"
-					class="inline-flex items-center rounded-md bg-clay px-6 py-3 text-sm font-semibold text-ivory hover:bg-clay-dark transition-colors"
-				>
-					Start a conversation
-				</a>
-				<a
-					href="/portfolio"
-					class="inline-flex items-center rounded-md border border-ink/20 px-6 py-3 text-sm font-semibold text-ink hover:border-clay hover:text-clay transition-colors"
-				>
-					See published work
-				</a>
+		<section class="mx-auto max-w-5xl px-6 pt-20 pb-16 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+			<div>
+				<p class="text-sm font-semibold tracking-[0.2em] uppercase text-clay mb-5">
+					Ghostwriter &amp; Editor
+				</p>
+				<h1 class="font-serif text-5xl sm:text-6xl leading-[1.05] text-ink">
+					Your story, your voice — written to be finished.
+				</h1>
+				<p class="mt-6 text-lg text-ink/70 max-w-2xl leading-relaxed">
+					I'm Edie Bakker, a ghostwriter and editor who helps authors, founders, and
+					storytellers turn a lifetime of experience into a book that actually gets written —
+					and reads like it was written by them.
+				</p>
+				<div class="mt-9 flex flex-wrap gap-4">
+					<a
+						href="/contact"
+						class="inline-flex items-center rounded-md bg-clay px-6 py-3 text-sm font-semibold text-ivory hover:bg-clay-dark transition-colors"
+					>
+						Start a conversation
+					</a>
+					<a
+						href="/portfolio"
+						class="inline-flex items-center rounded-md border border-ink/20 px-6 py-3 text-sm font-semibold text-ink hover:border-clay hover:text-clay transition-colors"
+					>
+						See published work
+					</a>
+				</div>
+			</div>
+			<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-sm">
+				<Image
+					src={flowers}
+					alt="Lilies in a vase, warm and unstaged — the kind of everyday detail worth writing down."
+					width={600}
+					height={750}
+					class="w-full h-full object-cover object-[50%_65%]"
+				/>
 			</div>
 		</section>
 
@@ -94,7 +119,21 @@ const services = [
 		<section class="border-t border-stone-dark/50 bg-stone/40">
 			<div class="mx-auto max-w-5xl px-6 py-20">
 				<h2 class="font-serif text-3xl text-ink mb-8">What clients say</h2>
-				<Placeholder label="Send me 2–4 client testimonials (quote + name/role, or initials if they prefer anonymity) and I'll replace this with a real testimonial grid." />
+				<div class="grid gap-6 sm:grid-cols-2">
+					{
+						testimonials.map((t) => (
+							<figure class="rounded-lg border border-stone-dark/60 bg-ivory p-6">
+								<blockquote class="text-ink/80 leading-relaxed">
+									&ldquo;{t.quote}&rdquo;
+								</blockquote>
+								<figcaption class="mt-4 text-sm">
+									<span class="font-semibold text-ink">{t.name}</span>
+									<span class="text-ink/60"> &middot; {t.project}</span>
+								</figcaption>
+							</figure>
+						))
+					}
+				</div>
 			</div>
 		</section>
 

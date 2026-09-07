@@ -6,13 +6,16 @@ import { Image } from 'astro:assets';
 import headshot from '../assets/edie-headshot.jpg';
 
 const credentials = [
-	'B.A. in Anthropology',
-	'MFA-equivalent in Writing',
-	'Contributor, National Geographic Magazine (Feb. 1994)',
-	'Author, Rendezvous with a Rainforest',
-	'"Artist of the Year," Art Spark Texas',
-	'Leader, Costa Rica Writers Group',
-	'Freelance editor',
+	{ text: 'B.A. in Anthropology' },
+	{ text: 'MFA-equivalent in Writing' },
+	{ text: 'Contributor, National Geographic Magazine (Feb. 1994)' },
+	{
+		text: 'Author, Rendezvous with a Rainforest and ',
+		link: { href: 'https://edie-bakker-books.netlify.app', label: '13 other books' },
+	},
+	{ text: '"Artist of the Year," Art Spark Texas' },
+	{ text: 'Leader, Costa Rica Writers Group' },
+	{ text: 'Freelance editor' },
 ];
 ---
 
@@ -58,9 +61,8 @@ const credentials = [
 					for someone else, I bring an editor's eye to it, not just a writer's.
 				</p>
 				<p>
-					Ghostwriting, to me, is an extension of the same discipline: getting out of the way of
-					someone else's truth so it can reach the page intact, in a voice that still sounds
-					like them.
+					Ghostwriting, to me, is getting into someone else's truth so it can reach the page
+					intact, in a voice that sounds like them.
 				</p>
 			</div>
 		</section>
@@ -73,7 +75,19 @@ const credentials = [
 						credentials.map((c) => (
 							<li class="flex items-start gap-2 text-sm text-ink/75">
 								<span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-clay shrink-0" />
-								{c}
+								<span>
+									{c.text}
+									{c.link && (
+										<a
+											href={c.link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-clay underline hover:text-clay-dark"
+										>
+											{c.link.label}
+										</a>
+									)}
+								</span>
 							</li>
 						))
 					}
