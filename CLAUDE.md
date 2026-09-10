@@ -60,6 +60,11 @@ Netlify does not reliably detect the form from the Astro-rendered page, so
 `public/__forms.html` holds a plain static copy of the form purely for build-time detection.
 **Any field-name change in `contact.astro` must be mirrored there** or submissions 404.
 
+Two things live only in the Netlify UI (not the repo), both already configured: automatic
+form detection must be **on** (Site configuration → Forms), and it only takes effect on
+deploys built *after* it was enabled. Email on submission requires a **Form notification**
+(Forms → Form notifications) — Netlify stores submissions but never emails without it.
+
 ## Deployment
 
 Netlify, configured in `netlify.toml` (`npm run build` → publish `dist`). Pushing to `main`
