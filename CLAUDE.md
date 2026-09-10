@@ -65,6 +65,9 @@ Netlify does not reliably detect the form from the Astro-rendered page, so
 Netlify, configured in `netlify.toml` (`npm run build` → publish `dist`). Pushing to `main`
 deploys.
 
+`src/pages/version.txt.ts` emits a static `/version.txt` stamped with Netlify's `COMMIT_REF`
+and build time. To check which commit is live: `curl -s https://<site>/version.txt`.
+
 ## Notes
 
 - `AGENTS.md` mirrors the development section of this file — keep the two in sync if you
