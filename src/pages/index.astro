@@ -27,9 +27,8 @@ const testimonials = [
 		project: '"Finding Pura Vida"',
 	},
 	{
-		quote: 'Edie made the story of my life come alive and gave it a deeply meaningful perspective.',
-		name: 'Jasmine Kent',
-		project: '"Loving God: Loving Joe"',
+		quote: "Edie Bakker can write.... I mean really write, whether it's academic articles, as she has edited for me, or personal stories. She knows how to include the key details but leave out the extraneous ones, and to package the whole thing into a book that just flows.",
+		name: 'Dr. T. Wayne Dye',
 	},
 ];
 
@@ -128,7 +127,7 @@ const services = [
 								</blockquote>
 								<figcaption class="mt-4 text-sm">
 									<span class="font-semibold text-ink">{t.name}</span>
-									<span class="text-ink/60"> &middot; {t.project}</span>
+									{t.project && <span class="text-ink/60"> &middot; {t.project}</span>}
 								</figcaption>
 							</figure>
 						))
