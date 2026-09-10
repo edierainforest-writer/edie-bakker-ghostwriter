@@ -56,6 +56,10 @@ a deployed Netlify build, not `astro dev`. Key wiring that must stay intact: the
 the `bot-field` honeypot, and `action="/thank-you/"` (trailing slash matters) which routes
 to `src/pages/thank-you.astro` on success.
 
+Netlify does not reliably detect the form from the Astro-rendered page, so
+`public/__forms.html` holds a plain static copy of the form purely for build-time detection.
+**Any field-name change in `contact.astro` must be mirrored there** or submissions 404.
+
 ## Deployment
 
 Netlify, configured in `netlify.toml` (`npm run build` → publish `dist`). Pushing to `main`

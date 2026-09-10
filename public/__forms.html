@@ -1,0 +1,21 @@
+<!--
+  Netlify Forms detection file.
+
+  Netlify registers forms by parsing static HTML at deploy time. It does not
+  reliably parse Astro-rendered pages, so the real form in src/pages/contact.astro
+  would silently never be registered — and POSTs to it 404.
+
+  This file exists only for detection: it must list every field name (and the
+  hidden form-name + honeypot) used by the real form. Keep the two in sync.
+-->
+<html>
+	<head></head>
+	<body>
+		<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+			<input type="hidden" name="form-name" value="contact" />
+			<input type="text" name="name" />
+			<input type="email" name="email" />
+			<textarea name="project"></textarea>
+		</form>
+	</body>
+</html>
